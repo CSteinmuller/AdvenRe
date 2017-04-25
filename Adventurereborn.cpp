@@ -4,7 +4,7 @@
 #include<fstream>
 #include<cstring>
 #include<string>
-#include "adventurereborn.h"
+#include "Adventurereborn.h"
          
 //Implementation file//
 using namespace std;
@@ -86,9 +86,9 @@ void loadingchar (ifstream& infile, player& hero)
       if (!infile)
      {
          cerr<<"Could not open file: Gameinfo.data";
-         system("CLS");
-         system("PAUSE");
-         exit(0);
+       //  system("CLS");
+        // system("PAUSE");
+         return;
       }
       while (j < 2)
       {
@@ -99,7 +99,7 @@ void loadingchar (ifstream& infile, player& hero)
      while (j < 6)
      {
          cout<<"loading spells \n";
-         system("CLS");
+        // system("CLS");
          infile>>hero.sd[j]>>hero.spellcost[j];
          infile.getline(hero.spell[j], size-1, '\n');
          j++;
@@ -116,9 +116,9 @@ void loadingmon (ifstream& mfile, monsterfile MM[size])
            if (!mfile)
      {
          cerr<<"Could not open file: Monsters.data";
-         system("CLS");
-         system("PAUSE");
-         exit(0);
+        // system("CLS");
+      //   system("PAUSE");
+         return;
       }
             while (!mfile.eof())
      {
@@ -130,7 +130,7 @@ void loadingmon (ifstream& mfile, monsterfile MM[size])
           mfile.getline(MM[j].mspell, size-1, '\n');
           j++;
           cout<<" Loading monsters"<<j<<"\n";
-          system("CLS");
+        //  system("CLS");
      }
 }
 /**
@@ -324,7 +324,7 @@ ally is alive or not
 bool Henchman (minion& hench, player hero, monsterfile MM)
 {
      if (MM.mhp > 0)
-        {
+     {
              if (MM.ms == 0) 
              {  
              cout<<"The "<<MM.mname<<" hits you with its "<<MM.mwep<<"... \n";
@@ -342,8 +342,8 @@ bool Henchman (minion& hench, player hero, monsterfile MM)
              MM.ms = MM.ms - 1;
              cout<<"The "<<MM.mname<<" casts "<<MM.mspell;
              hench.hhp = hench.hhp - MM.msd;
-             }
-             }
+         }
+     }
      if (hench.hhp >  0)
      {
      return true;
@@ -351,8 +351,8 @@ bool Henchman (minion& hench, player hero, monsterfile MM)
      else if (hench.hhp < 1)
      {
           return false;
-          }
-     }
+      }
+ }
      
 /**
 This function is redundent
@@ -360,12 +360,12 @@ It prints the credits
 */
 void credits(ofstream& outfile, player& hero)
 {
-     system("CLS");
+    // system("CLS");
      outfile<<"Name:"<<hero.yname<<" "<<hero.lname<<" Class:"<<hero.chclass<<" Point total: "<<hero.gp;
      cout<<" \n See Adventure Reborn II: The Invasion,"
       <<" coming soon to a store near you!!!";
-     system("PAUSE");
-     system("CLS");
+   //  system("PAUSE");
+  //   system("CLS");
      cout<<"Programmed by: Christopher Steinmuller \n Engine: Shuriken v1.1 \n"
      <<"size 800KB. \n";
 } 
@@ -377,8 +377,8 @@ game if the hero dies.
 */
 void death()
 {
-     system("CLS");
-     system("color 04");
+   //  system("CLS");
+   //  system("color 04");
      cout<<"You are such a loser for dying";
      }
      
@@ -391,7 +391,7 @@ void cohort (ifstream& indata, minion& hench)
          indata>>hench.hhp>>hench.hd>>hench.hname>>hench.hdr>>hench.hwep
          >>hench.hs>>hench.hsd>>hench.hspell;
          cout<<"Loading Cohorts...";
-         system("CLS");
+      //   system("CLS");
          }
 
 
@@ -404,7 +404,7 @@ void classes (player& hero)
     cout<<" And now your character class: pick from:"
      <<" \n wizard or warrior, type in 1 for spell caster, 2 for warrior \n";
      cin>>hero.ch;
-     system("CLS");
+   //  system("CLS");
      if (hero.ch == 2)
      {
           if ((hero.gender == 'm')||(hero.gender== 'M')) 
@@ -468,11 +468,11 @@ void classes (player& hero)
      hero.xs = 4;
      hero.cspl = hero.xs;
      }
-     else if (hero.caster = false)
+     else if (hero.caster == false)
      {
           hero.xs = 0;
           hero.cspl = hero.xs; 
-     system("CLS");
+    // system("CLS");
      } 
 }
 
