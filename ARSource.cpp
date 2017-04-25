@@ -15,14 +15,14 @@ Attempting to use the Shuriken 1.1 engine
 #include<fstream>
 #include<cstring>
 #include<string>
-#include "Adventurereborn.h"
+//include "Adventurereborn.h"
 #include "Adventurereborn.cpp"
 using namespace std;
 
 
 /*
 Structs
-*/
+
  struct minion //Ally data//
  {
      int hs,
@@ -82,7 +82,7 @@ struct player //player data//
      caster;  
 };
 
-
+*/
 
 /*
 Main
