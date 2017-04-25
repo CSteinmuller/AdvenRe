@@ -4,7 +4,7 @@
 #include<fstream>
 #include<cstring>
 #include<string>
-#include "adventurereborn.cpp"
+#include "adventurereborn.h"
          
 //Implementation file//
 using namespace std;
