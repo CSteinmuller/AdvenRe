@@ -7,6 +7,18 @@ using namespace std;
 
 class creature
 {
+	public:
+	creature()
+	{
+		hp = 0;
+		chp  = 0;
+		wep = "none";
+		damage = 0;
+		spell = "none";
+		sdamage = 0;
+		xp = 0;
+		gp = 0;
+	}
 private:
 int hp;
 int chp;
